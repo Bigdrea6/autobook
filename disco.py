@@ -155,7 +155,7 @@ async def on_message(message):
                     else:
                         yotei6+=(log[i]+" ")
                 yotei7=""
-                for i in range(78,90:
+                for i in range(78,90):
                     if i==78:
                         yotei7+=(log[i]+":")
                     elif i==84:
