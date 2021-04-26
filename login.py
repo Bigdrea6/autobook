@@ -4,7 +4,6 @@ from selenium.webdriver.chrome.options import Options
 
 import search
 
-chrome='/usr/local/bin/chromedriver'
 
 url='****'
 url_2='****'
@@ -58,6 +57,6 @@ def last():
         return False
 
 def main():
-    return Login()
-    sleep(1)
-    browser.close()
+    browser.get(url)
+    log=Login()
+    return log
