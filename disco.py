@@ -6,29 +6,33 @@ import datetime
 import login
 
 url="*****"
+s="始めます"
+f="時間外になりました"
+
 client = discord.Client()
 token="******"
 
 @client.event
 async def on_ready():
     print("Login")
-    print(client.user.name)
-    print(client.user.id)
-    print("-----")
-
 
 @client.event
 async def on_message(message):
     if message.content.startswith("1"):
         m="パターン : 月~木・土"
         await message.channel.send(m)
+        print("1")
         while True:
             ready=hei()
             if ready:
                 break
-        for i in range(40):
+        print("start")
+        await message.channel.send(s)
+        for i in range(60):
             log=login.main()
+            print("success")
             if log!=False:
+                print("catch")
                 yotei1=""
                 for i in range(0,13):
                     if i==0:
@@ -94,18 +98,24 @@ async def on_message(message):
                 await message.channel.send(yotei6)
                 await message.channel.send(yotei7)
                 await message.channel.send(url)
-            time.sleep(170)
+            time.sleep(110)
+        await message.channel.send(f)
 
     elif client.user!=message.author:
         m="パターン : 日曜"
         await message.channel.send(m)
+        print("2")
         while True:
             ready=kyuu()
             if ready:
                 break
-        for i in range(40):
+        print("start")
+        await message.channel.send(s)
+        for i in range(60):
             log=login.main()
+            print("success")
             if log!=False:
+                print("catch")
                 yotei1=""
                 for i in range(0,13):
                     if i==0:
@@ -171,7 +181,8 @@ async def on_message(message):
                 await message.channel.send(yotei6)
                 await message.channel.send(yotei7)
                 await message.channel.send(url)
-            time.sleep(170)
+            time.sleep(110)
+        await message.channel.send(f)
 
 def hei():
     dt_now = datetime.datetime.now()
