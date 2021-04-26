@@ -1,5 +1,5 @@
-import requests as req
 from bs4 import BeautifulSoup as bs
+import lxml
 
 def clear(html):
     soup=bs(html,"lxml")
